@@ -3,7 +3,7 @@ phases:
   install:
     commands:
       # Install all dependencies (including dependencies for running tests)
-      - npm i fsevents@latest
+      - npm i fsevents@latest -f --save-optional
       - npm install
   pre_build:
     commands:
