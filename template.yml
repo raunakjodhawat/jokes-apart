@@ -31,7 +31,7 @@ Resources:
   # Each Lambda function is defined by properties:
   # https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
 
-  # This is a Lambda function config associated with the source code: hello-from-lambda.js
+  # This is a Lambda function config associated with the source code: lambda-function.js
   helloFromLambdaFunction:
     Type: AWS::Serverless::Function
     Properties:
@@ -42,5 +42,5 @@ Resources:
       Timeout: 60
       Description: A Lambda function that returns a static string.
       Policies:
-        # Give Lambda basic execution Permission to the helloFromLambda
+        # Give Lambda basic execution Permission to the getRandomJokes
         - AWSLambdaBasicExecutionRole
