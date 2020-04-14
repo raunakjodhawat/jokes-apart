@@ -1,5 +1,6 @@
-# Start from scratch starter project
-![Development stack](./dev-stack-3.png)
+# Tech Stack
+Website: www.chuck.raunakjodhawat.com
+![Development stack](./dev-stack.png)
 
 This project contains source code and supporting files for the serverless application that is created in the AWS Lambda console. Any commits, changes the code structure in AWS.
 
