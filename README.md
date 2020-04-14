@@ -1,4 +1,6 @@
 # Start from scratch starter project
+![Development stack](./full-development-stack.svg)
+<img src="./controllers_brief.svg">
 
 This project contains source code and supporting files for the serverless application that is created in the AWS Lambda console. Any commits, changes the code structure in AWS.
 
