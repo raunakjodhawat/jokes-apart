@@ -36,7 +36,7 @@ Resources:
     Type: AWS::Serverless::Function
     Properties:
       CodeUri: ./
-      Handler: src/handlers/hello-from-lambda.helloFromLambdaHandler
+      Handler: src/handlers/hello-from-lambda.getRandomJokes
       Runtime: nodejs10.x
       MemorySize: 128
       Timeout: 60
