@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import { fetchAWSJokeApart } from './network';
+import { makeNetworkRequest } from './network';
 
 class App extends Component {
   constructor(props) {
@@ -15,9 +15,9 @@ class App extends Component {
   }
 
   getJoke = async () => {
-    let joke = await fetchAWSJokeApart();
+    let joke = await makeNetworkRequest("GET", process.env.GATEWAY_API_URL);
     this.setState({
-      joke
+      joke: joke.message
     });
   }
 
