@@ -15,7 +15,7 @@ class App extends Component {
   }
 
   getJoke = async () => {
-    let joke = await makeNetworkRequest("GET", process.env.GATEWAY_API_URL);
+    let joke = await makeNetworkRequest("GET", process.env.REACT_APP_GATEWAY_API_URL);
     this.setState({
       joke: joke.message
     });
