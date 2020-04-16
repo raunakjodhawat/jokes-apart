@@ -6,8 +6,6 @@ before_install:
      - docker build -f Dockerfile.dev -t raunakjodhawat/chucknorris:latest .
 
 script:
-    - export REACT_APP_EXTERNAL_API_URL=$REACT_APP_EXTERNAL_API_URL
-    - export REACT_APP_GATEWAY_API_URL=$REACT_APP_GATEWAY_API_URL
     - docker run -e CI=true -p "3000:3000" -e REACT_APP_EXTERNAL_API_URL=$REACT_APP_EXTERNAL_API_URL -e REACT_APP_GATEWAY_API_URL=$REACT_APP_GATEWAY_API_URL raunakjodhawat/chucknorris npm run test -- --coverage
 
 after_success:
