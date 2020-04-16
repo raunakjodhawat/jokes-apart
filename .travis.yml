@@ -8,7 +8,7 @@ before_install:
 script:
     - export REACT_APP_EXTERNAL_API_URL=$REACT_APP_EXTERNAL_API_URL
     - export REACT_APP_GATEWAY_API_URL=$REACT_APP_GATEWAY_API_URL
-    - docker run -e CI=true -p "3000:3000" raunakjodhawat/chucknorris npm run test -- --coverage
+    - docker run -e CI=true -p -e REACT_APP_EXTERNAL_API_URL=$REACT_APP_EXTERNAL_API_URL -e REACT_APP_GATEWAY_API_URL=$REACT_APP_GATEWAY_API_URL "3000:3000" raunakjodhawat/chucknorris npm run test -- --coverage
 
 after_success:
     - npm prune --production
