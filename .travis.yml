@@ -6,9 +6,10 @@ before_install:
      - docker build -f Dockerfile.dev -t raunakjodhawat/chucknorris:latest .
 
 script:
-    - docker run -e CI=true raunakjodhawat/chucknorris npm run test -- --coverage
-    - npm prune --production
+    - docker run -e CI=true -p "3000:3000" raunakjodhawat/chucknorris npm run test -- --coverage
 
+after_success:
+    - npm prune --production
 deploy:
     edge: true
     provide: elasticbeanstalk
