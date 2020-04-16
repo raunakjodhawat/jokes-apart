@@ -5,6 +5,4 @@ COPY ./package.json .
 RUN npm i fsevents@latest -f --save-optional
 RUN npm install
 COPY . .
-ENV REACT_APP_EXTERNAL_API_URL=http://api.icndb.com/jokes/15
-ENV REACT_APP_GATEWAY_API_URL=https://588b0wd7f6.execute-api.us-east-2.amazonaws.com/production
 CMD ["npm", "start"]
