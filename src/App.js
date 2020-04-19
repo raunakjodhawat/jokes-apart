@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import { fetchAWSJokeApart } from './network';
+import { makeNetworkRequest } from './network';
 
 class App extends Component {
   constructor(props) {
@@ -15,9 +15,9 @@ class App extends Component {
   }
 
   getJoke = async () => {
-    let joke = await fetchAWSJokeApart();
+    let joke = await makeNetworkRequest("GET", process.env.REACT_APP_GATEWAY_API_URL);
     this.setState({
-      joke
+      joke: joke.message
     });
   }
 
@@ -31,7 +31,7 @@ class App extends Component {
         <p>©: 
           <a href = "https://www.linkedin.com/in/jodhawat/">Raunak Jodhawat</a> ||  
           <a href = "https://github.com/raunakjodhawat">Git</a> ||
-          <a href = "https://github.com/raunakjodhawat/jokes-apart-client">Fork this project</a>
+          <a href = "https://github.com/raunakjodhawat/jokes-apart-client">Fork this project</a> ||
           <a href = "http://api.icndb.com/jokes/random/">Chuck Norris Jokes API</a>
         </p>
       </div>

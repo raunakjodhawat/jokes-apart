@@ -1,10 +1,23 @@
 const axios = require('axios');
-export async function fetchAWSJokeApart(){
-    const res = await axios.get("https://588b0wd7f6.execute-api.us-east-2.amazonaws.com/production", { params:{}, headers: { } });
-    if(res){
-        if(res.status === 200){
-            return res.data
+export async function makeNetworkRequest(method, url){
+    return axios({
+        method,
+        url,
+    }).then((response)=>{
+        if(response.status === 200){
+            return {
+                status: response.status,
+                message: response.data
+            };
         }
-        return "Failed to hit AWS"
-    }
+        return {
+            status: response.status,
+            message: "ERROR, Status is not 200"
+        };
+    }).catch((error)=>{
+        return {
+            status: 500,
+            message: `Error in making axios request, ${error}`
+        };
+    })
 }
