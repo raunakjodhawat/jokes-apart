@@ -7,5 +7,5 @@ RUN npm i serve -g
 RUN npm install
 COPY . .
 RUN npm run build
-
+EXPOSE 5000
 CMD ["serve", "-s", "build"]
