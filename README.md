@@ -1,3 +1,4 @@
+![Travis Build](https://api.travis-ci.org/raunakjodhawat/jokes-apart.svg?branch=master)
 # Tech Stack
 Website: www.chuck.raunakjodhawat.com
 ![Development stack](./static-assets/dev-stack.png)
