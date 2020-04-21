@@ -3,7 +3,7 @@ FROM node:latest AS build
 WORKDIR /chuckNorrisClient
 COPY ./package.json .
 RUN npm i fsevents@latest -f --save-optional
-RUN npm install
+RUN npm install --no-optional
 COPY . .
 RUN npm run build
 
